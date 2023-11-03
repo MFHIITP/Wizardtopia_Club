@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form of Entry to Wizardtopia</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .forms{
+        position:absolute;
+        top:200px;
+        left:20%;
+        width:80vw;
+    }
+    .input{
+        display:flex;
+        flex-direction: row;
+        border:2px solid blue;
+        border-radius: 6px;
+        margin:12px;
+        padding:12px;
+        width:18%;
+        height:20px;
+    }
+
+    .btn{
+        color:black;
+        background-color: white;
+        cursor:pointer;
+        border:2px solid blue;
+        border-radius: 4px;
+        margin:10px 6px;
+        padding:2px;
+        width:100px;
+    }
+    .btn:hover{
+        color:white;
+        background-color: black;
+    }
+    body::before{
+        background: url('Dhogwarts.webp') no-repeat center center/cover;
+        height:100%;
+        width:100%;
+        content: "";
+        position:absolute;
+        left:0px;
+        top:0px;
+        z-index: -1;
+    }
+    h1, p{
+        margin-left:20px;
+        color:white;
+        font-size:50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    input::placeholder{
+        color:black;
+        font-weight:bold;
+    }
+    @media only screen and (max-width: 600px){
+        h1, p{
+            margin-left: 20px;
+        }
+        .input{
+            width:230px;
+        }
+        .form{
+            position: relative;
+            top:100px;
+            left:0px;
+        }
+    }
+
+</style>
+<body>
+    <h1>Enter your Details</h1>
+    <p style="font-size: larger; margin-top: 23px;">To new students, Welcome and to our existing students, Welcome Back</p>
+    <div class="forms">
+        <form action="../backend.js" method="post">
+            <input type="text" name="name" id="name" class="input" placeholder="Enter your name">
+            <input type="text" name="year" id="year" class="input" placeholder="Enter your year of study">
+            <input type="number" name="phone" id="phone" class="input" placeholder="Enter your mobile number">
+            <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID">
+            <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university">
+            <button type="reset" class="btn">Reset</button>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
