@@ -37,6 +37,7 @@ connect();
 var Schema = mongoose.Schema({
     name:String,
     year:String,
+    branch:String
     phone: Number,
     email:String,
     study:String
