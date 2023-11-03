@@ -19,7 +19,7 @@ app.listen(port, ()=>{
 });
 
 const mongoose = require('mongoose');
-const server = "JUITfh-891@clusterfarshid.vcl5snh.mongodb.net";
+const server = "hossainfarshid:JUITfh-891@clusterfarshid.vcl5snh.mongodb.net";
 const database = "Wizardtopia";
 
 const connect = async()=>{
