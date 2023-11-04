@@ -88,8 +88,13 @@
             <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID">
             <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university">
             <button type="reset" class="btn">Reset</button>
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn" onclick="alerting()">Submit</button>
         </form>
     </div>
+    <script>
+        function alerting(){
+            confirm("Do you want to submit the form?");
+        }
+    </script>
 </body>
 </html>
