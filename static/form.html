@@ -81,12 +81,13 @@
     <p style="font-size: larger; margin-top: 23px;">To new students, Welcome and to our existing students, Welcome Back</p>
     <div class="forms">
         <form action="../backend.js" method="post">
-            <input type="text" name="name" id="name" class="input" placeholder="Enter your name">
-            <input type="text" name="year" id="year" class="input" placeholder="Enter your year of study">
+            <p style="font-size: large;">* marked contents are mandatory to fill</p>
+            <input type="text" name="name" id="name" class="input" placeholder="Enter your name *" required>
+            <input type="text" name="year" id="year" class="input" placeholder="Enter your year of study *" required>
             <input type="text" name="branch" id="branch" class="input" placeholder="Enter your department">
-            <input type="number" name="phone" id="phone" class="input" placeholder="Enter your mobile number">
-            <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID">
-            <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university">
+            <input type="number" name="phone" id="phone" class="input" placeholder="Enter your mobile number *" required>
+            <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID *" required>
+            <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university *" required>
             <button type="reset" class="btn">Reset</button>
             <button type="submit" class="btn" onclick="alerting()">Submit</button>
         </form>
