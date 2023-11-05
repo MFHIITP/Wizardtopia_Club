@@ -42,16 +42,32 @@ var Schema = mongoose.Schema({
     email:String,
     study:String
 });
-const Collection1 = mongoose.model("Collection 1", Schema);
+const Collection1 = mongoose.model("collection_1", Schema);
 
 
 app.post("/backend.js", (req, res)=>{
     var data = new Collection1(req.body);
-    data.save().then(()=>{
-        res.status(200).send("Your data has been updated to the database. Please exit the website");
-    }).catch(()=>{
-        res.send("OOPs, The data has not been saved. Please try again");
-    });
+    
+
+    async function output(data, res){
+        const same = await Collection1.find({email: data.email});
+        try{
+            const value = await same[0].email;
+            if(value){
+                res.send("You have already registered before. Please contact the admin if you want to reenter");
+            }
+        }
+        catch(err){
+            data.save().then(()=>{
+                res.status(200).send("Your data has been updated to the database. Please exit the website");
+            }).catch(()=>{
+                res.send("OOPs, The data has not been saved. Please try again");
+            });
+        }
+    }
+
+    output(data, res);
+    
 });
 
 // app.post == form action. The form action actions on the backend.js
@@ -59,11 +75,4 @@ app.post("/backend.js", (req, res)=>{
 // Thar is why, app.post os backend.js as well as the real app(form).post(action), form.action is backend.js
 
 
-
-
-
-
-
-
-
-
+ 
