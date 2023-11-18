@@ -47,11 +47,9 @@
         color:white;
     }
     .dropclass{
-        padding:4px;
         background-color: aquamarine;
         border:2px solid blue;
         border-radius: 4px;
-        margin:4px;
         position: relative;
         top: 12px;
         left: 12px;
@@ -293,13 +291,14 @@
             <li><a href="/index.html">Rules And Regulations</a></li>
             <li><a href="/static/form.html">Register Your Name</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle dropclass" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Matirials
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="https://www.kaggle.com/datasets/hinepo/harry-potter-books-in-pdf-1-7"
+                    target="_blank">Books</a></li>
+                  <li><a class="dropdown-item" href="#">Movies</a></li>
+                  <li><a class="dropdown-item" href="#">Disabled</a></li>
                 </ul>
               </li>
         </ul>
@@ -309,19 +308,19 @@
     </div>
     <div class="houses">
         <div class="gryffindor house_name">
-            <img src="/static/download.png" class="object-fit-cover border rounded" alt="...">
+            <a href="../static/Gryffindor.html"><img src="/static/download.png" class="object-fit-cover border rounded" alt="..."></a>
             <p style="font-weight: bold">Gryffindor</p>
         </div>
         <div class="huffelpuff house_name">
-            <img src="/static/download (2).jpg" class="object-fit-cover border rounded" alt="...">
+            <a href="../static/Huffelpuff.html"><img src="/static/download (2).jpg" class="object-fit-cover border rounded" alt="..."></a>
             <p style="font-weight: bold">Hufflepuff</p>
         </div>
         <div class="ravenclaw house_name">
-            <img src="/static/download.jpg" class="object-fit-cover border rounded" alt="...">
+            <a href="../static/Ravenclaw.html"><img src="/static/download.jpg" class="object-fit-cover border rounded" alt="..."></a>
             <p style="font-weight: bold">Ravenclaw</p>
         </div>
         <div class="slytherin house_name">
-            <img src="/static/download (1).jpg" class="object-fit-cover border rounded" alt="...">
+            <a href="../static/Slytherin.html"><img src="/static/download (1).jpg" class="object-fit-cover border rounded" alt="..."></a>
             <p style="font-weight: bold">Slytherin</p>
         </div>
     </div>
