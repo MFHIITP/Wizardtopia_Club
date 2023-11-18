@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const port = process.env.PORT || 3000;
+const router = express.Router();
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use("/static", express.static('static'));
 app.use(express.urlencoded());
 
 app.get('/', (req,res)=>{
-    res.status(200).sendFile(__dirname + "/index.html");
+    res.status(200).sendFile(__dirname + "/Login.html");
 });
 
 app.listen(port, ()=>{
@@ -45,7 +46,24 @@ var Schema = mongoose.Schema({
 const Collection1 = mongoose.model("collection_1", Schema);
 
 
-app.post("/backend.js", (req, res)=>{
+// app.post("/backend1.js", (req,res)=>{
+//     console.log(5);
+//     async function del1(){
+//         let c = prompt("Enter your email address");
+//         const dele = mongoose.model("collection_1").deleteOne({email: c});
+//         console.log(dele);
+//         if(dele.deletedCount == 0){
+//             res.send("You have not registered");
+//         }
+//         else{
+//             res.send("Your registration have been deleted");
+//         }
+//     }
+//     del1();
+// });
+
+
+app.post("/backend_main.js", async (req, res)=>{
     var data = new Collection1(req.body);
     
 
@@ -75,4 +93,63 @@ app.post("/backend.js", (req, res)=>{
 // Thar is why, app.post os backend.js as well as the real app(form).post(action), form.action is backend.js
 
 
- 
+app.post("/backend1.js", async(req,res)=>{
+    async function del(){
+        const email = req.body.email;
+        const confirm = req.body.confirm;
+        if(confirm == "on"){
+            try{
+                const dele = await mongoose.model("collection_1").deleteOne({email: email});
+                if(dele.deletedCount == 0){
+                    res.send("Your name has not been registered. Please register youtself.");      
+                }
+                else{
+                    res.send("Your account has been successfully deleted.");
+                }
+            }
+            catch(err){
+                res.send("Unexpected server or network issue.");
+            }
+        }
+    }
+    del();
+});
+
+
+
+app.post("/backend_register.js", async(req, res)=>{
+    var data = req.body;
+
+    async function output(data, res){
+        const mail = await Collection1.find({email: data.email});
+        try{
+            const value = await mail[0].email;
+            if(value){
+                res.send("You have already registered before. Please contact the admin if you want to reenter");
+            }
+        }
+        catch(err){
+            res.status(200).sendFile(__dirname + "/static/form.html");
+        }
+    }
+
+    output(data, res);
+});
+
+app.post("/backend_login.js", async(req,res)=>{
+    var data = req.body;
+    async function output(data, res){
+        const mail = await Collection1.find({email: data.email});
+        try{
+            const value = await mail[0].email;
+            if(value){
+                   res.status(200).sendFile(__dirname + "/static/index.html"); 
+            }
+        }
+        catch(err){
+            res.send("You have not yet registered. Please register");
+        }
+    }
+
+    output(data, res);
+});
