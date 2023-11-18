@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wizardtopia - Wizards of Jadavpur University United</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
     *{
         margin:0px;
         padding:0px;
     }
-    .navbar{
+    .navbars{
         border: 2px solid purple;
         margin:2px;
         background-color: rgb(51, 68, 68);
@@ -18,17 +19,17 @@
         flex-direction: row;
         position:sticky;
         top:0px;
-        width:98%;
+        width:99.8%;
     }
 
-    .navbar>ul{
+    .navbars>ul{
         display: flex;
         flex-direction: row;
     }
-    .navbar>ul>li{
+    .navbars>ul>li{
         list-style: none;
     }
-    .navbar>ul>li>a{
+    .navbars>ul>li>a{
         padding:4px;
         background-color: aquamarine;
         border:2px solid blue;
@@ -38,7 +39,7 @@
         top: 12px;
         left: 12px;
     }
-    .navbar>ul>li>a:hover{
+    .navbars>ul>li>a:hover{
         background-color: black;
         color:white;
     }
@@ -48,6 +49,18 @@
         text-align: center;
         font-size: 40px;
         font-family:'Courier New', Courier, monospace;
+        animation-name: header;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes header{
+        from{
+            color:rgba(148, 35, 234, 0.605);
+        }
+        to{
+            color:rgb(91, 225, 149);
+        }
     }
 
     .houses{
@@ -95,27 +108,7 @@
         padding:4px;
     }
     
-    .gryffindor{
-        background-image: url('/static/download.png');
-        background-repeat: no-repeat;
-        object-fit: contain;   
-    }
-    .huffelpuff{
-        background-image: url('/static/download (2).jpg');
-        background-repeat: no-repeat;
-        object-fit: contain; 
-    }
-    .ravenclaw{
-        background-image: url('/static/download.jpg');
-        background-repeat: no-repeat;
-        object-fit: contain; 
-    }
-    .slytherin{
-        background-image: url('/static/download (1).jpg');
-        background-repeat: no-repeat;
-        object-fit: contain; 
-    }
-
+    
     body::before{
         background: url('/static/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
         content: '';
@@ -138,7 +131,7 @@
         padding:6px;
         border-radius: 12px;
     }
-
+    
     @media only screen and (max-width: 1200px){
         .houses{
             display: grid;
@@ -166,6 +159,12 @@
             opacity:0.5;
             z-index: -1;
         }
+        header{
+            /* border: 2px solid blue; */
+            text-align: center;
+            font-size: 35px;
+        font-family:'Courier New', Courier, monospace;
+    }
         
     }
 
@@ -213,21 +212,21 @@
         
     }
     @media only screen and (max-width:650px){
-        .navbar{
+        .navbars{
             height:fit-content;
             position: static;
         }
-        .navbar>ul{
+        .navbars>ul{
             display:flex;
             flex-direction: column;
             
         }
-        .navbar>ul>li{
+        .navbars>ul>li{
             margin:6px;
             padding:3px;
             text-decoration: none;
         }
-        .navbar>ul>li>a {
+        .navbars>ul>li>a {
             position: relative;
             top:2px;
             left: 24px;
@@ -258,17 +257,10 @@
             opacity:0.5;
             z-index: -1;
         }
-        .header{
-            /* border: 2px solid blue; */
-            text-align: center;
-            font-size: 35px;
-            font-family:'Courier New', Courier, monospace;
-        }
     }
-
 </style>
 <body>
-    <div class="navbar">
+    <div class="navbars">
         <div class="logo">
             <img src="/static/download (1).png" alt="" height="30px" width="50px">
             <p style="color: white">Wizardtopia</p>
@@ -277,24 +269,28 @@
             <li><a href="/index.html">Home</a></li>
             <li><a href="/index.html">Rules And Regulations</a></li>
             <li><a href="/static/form.html">Register Your Name</a></li>
-            <li><a href="/index.html">Excess</a></li>
+            <li><a href="/index.html" aria-disabled="true">Excess</a></li>
         </ul>
     </div>
     <div class="header">
-        <h2>Welcome to Wizardtopia</h2>
+        <h1><b>Welcome to Wizardtopia</b></h1>
     </div>
     <div class="houses">
-        <div class="gryffindor house_name" style="display:flex; align-items: flex-end;">
-            <p;>Gryffindor</p;>
+        <div class="gryffindor house_name">
+            <img src="/static/download.png" class="object-fit-cover border rounded" alt="...">
+            <p style="font-weight: bold">Gryffindor</p>
         </div>
-        <div class="huffelpuff house_name" style="display:flex; align-items: flex-end;">
-            <p>Hufflepuff</p>
+        <div class="huffelpuff house_name">
+            <img src="/static/download (2).jpg" class="object-fit-cover border rounded" alt="...">
+            <p style="font-weight: bold">Hufflepuff</p>
         </div>
-        <div class="ravenclaw house_name" style="display:flex; align-items: flex-end;">
-            <p>Ravenclaw</p>
+        <div class="ravenclaw house_name">
+            <img src="/static/download.jpg" class="object-fit-cover border rounded" alt="...">
+            <p style="font-weight: bold">Ravenclaw</p>
         </div>
-        <div class="slytherin house_name" style="display:flex; align-items: flex-end;">
-            <p>Slytherin</p>
+        <div class="slytherin house_name">
+            <img src="/static/download (1).jpg" class="object-fit-cover border rounded" alt="...">
+            <p style="font-weight: bold">Slytherin</p>
         </div>
     </div>
     <div class="message">
@@ -326,7 +322,7 @@
                     <p>Ravenclaw House Head: Professor Shramana Mondal</p>
                 </div>
                 <div id="t3">
-                    <p>Huffelpuff House Head: Professor Sreejan Bose</p>
+                    <p>Hufflepuff House Head: Professor Sreejan Bose</p>
                 </div>
                 <div id="t4">
                     <p>Slytherin House Head: Professor Ullash Biswas</p>
@@ -349,10 +345,9 @@
     </div>
     <div class="footer">
         <p>copyright: Wizards_of_jadavpur_united:</p>
-        <p style="font-size: small">Hogwarts_School_Of_Witchcraft_And_Wizardy:</p>
-        <p>Oficial_Extension</p>
+        <p>Hogwarts_School_Of_Witchcraft_And_Wizardy:Official_Extension</p>
         <p style="color:aqua;">Created by: Md. Farshid Hossain </p>       
-        <p>Approved by: Anirban Sarkar, Headmaster of Wizardtopia</p>
+        <p>Approved by: Anirban Sarkar, Headaster of Wizardtopia</p>
     </div>
     <script>
         function hide(){
@@ -365,6 +360,8 @@
                 menu.style.display = hide;
             }
         }
+        
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
