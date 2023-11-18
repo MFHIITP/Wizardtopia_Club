@@ -42,7 +42,7 @@
         background-color: black;
     }
     body::before{
-        background: url('Dhogwarts.webp') no-repeat center center/cover;
+        background: url('../static/Dhogwarts.webp') no-repeat center center/cover;
         height:100%;
         width:100%;
         content: "";
@@ -74,13 +74,27 @@
             left:0px;
         }
     }
+    .container{
+        float: right;
+    }
+    h4, label{
+        color:white;
+    }
+    .btn1{
+        color:rgb(251, 21, 21);
+        background-color: blue;
+    }
+    #confirm:hover{
+        cursor:pointer;
+    }
 
 </style>
 <body>
     <h1>Enter your Details</h1>
     <p style="font-size: larger; margin-top: 23px;">To new students, Welcome and to our existing students, Welcome Back</p>
+
     <div class="forms">
-        <form action="../backend.js" method="post">
+        <form action="../backend_main.js" method="POST" class="mainform">
             <p style="font-size: large;">* marked contents are mandatory to fill</p>
             <input type="text" name="name" id="name" class="input" placeholder="Enter your name *" required>
             <input type="text" name="year" id="year" class="input" placeholder="Enter your year of study *" required>
@@ -89,12 +103,26 @@
             <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID *" required>
             <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university *" required>
             <button type="reset" class="btn">Reset</button>
-            <button type="submit" class="btn" onclick="alerting()">Submit</button>
+            <button type="submit" class="btn main" onclick="alerting()">Submit </button>
         </form>
     </div>
+
+    <div class="container">
+        <h4>Delete Your Account</h4>
+        <form action="../backend1.js" method="post" class="form2">
+            <label for="email">Enter your email id*</label>
+            <input type="email" name="email" id="emailid" required>
+            <input type="checkbox" name="confirm" id="confirm" required>
+            <button type="submit" class="btn btn1" onclick="alerting1()"> Delete Your Account </button>
+        </form>
+    </div>
+
     <script>
         function alerting(){
             confirm("Do you want to submit the form?");
+        }
+        function alerting1(){
+            confirm("Do you want to delete your account?");
         }
     </script>
 </body>
