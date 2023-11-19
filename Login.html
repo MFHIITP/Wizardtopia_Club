@@ -19,21 +19,30 @@
         cursor:pointer;
     }
     body{
-        background-image: url("../static/Dhogwarts.webp");
-        height:100%;
-        width:100%;
-        background-size: 100%;
-        animation-name:back;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-duration: 10s;
-    }
-    @keyframes back {
-        from{
-            background-position: top;
+            background-image: url("../static/Dhogwarts.webp");
+            height:100%;
+            width:100%;
+            background-size: 150%;
         }
-        to{
-            background-position: center;
+    
+    @media only screen and (min-width:850px){
+        body{
+            background-image: url("../static/Dhogwarts.webp");
+            height:100%;
+            width:100%;
+            background-size: 100%;
+            animation-name:back;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+        }
+        @keyframes back {
+            from{
+                background-position: top;
+            }
+            to{
+                background-position: center;
+            }
         }
     }
 </style>
@@ -41,11 +50,11 @@
     <form class = "myclass">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label" style="color:white">Email address</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="opacity:0.5;">
           <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" style="opacity:0.5;">
           <label class="form-check-label" for="exampleCheck1" style="color:white">Check me out</label>
         </div>
         <button type="submit" class="btn btn-primary" formaction="backend_login.js" formmethod="post" style="color:white">Log In</button>
