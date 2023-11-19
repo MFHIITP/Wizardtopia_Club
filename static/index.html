@@ -97,6 +97,15 @@
         margin-top: 23px;
         display:flex;
         flex-direction: column;
+        animation: teacher 1s ease-in-out 0s 1 normal forwards;
+    }
+    @keyframes teacher {
+        from{
+            transform: scale(0);
+        }
+        to{
+            transform: scale(1);
+        }
     }
 
     .footer{
@@ -122,8 +131,8 @@
 
     #headmaster, #assistant, #t1, #t2, #t3, #t4, #h1, #h2{
         border: 2px solid green;
-        width:600px;
-        height:400px;
+        width:500px;
+        height:350px;
         border-radius: 12px;
         margin:20px;
         padding:4px;
@@ -146,11 +155,20 @@
 
     .message{
         border:2px solid green;
-        height:400px;
-        width:70%;
+        height:300px;
+        width:60%;
         margin:12px auto;
         padding:6px;
         border-radius: 12px;
+    }
+    .events{
+        border:2px solid green;
+        height:400px;
+        width:60%;
+        margin:12px auto;
+        padding:6px;
+        border-radius: 12px;
+        overflow: scroll;
     }
     
     @media only screen and (max-width: 1200px){
@@ -283,12 +301,12 @@
 <body>
     <div class="navbars">
         <div class="logo">
-            <img src="/static/download (1).png" alt="" height="30px" width="50px">
+            <a href="/static/Wizardtopia.html"><img src="/static/download (1).png" alt="" height="30px" width="50px"></a>
             <p style="color: white">Wizardtopia</p>
         </div>
         <ul id="menu">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/index.html">Rules And Regulations</a></li>
+            <li><a href="/static//index.html">Home</a></li>
+            <li><a href="/static/Rules.html">Rules And Regulations</a></li>
             <li><a href="/static/form.html">Register Your Name</a></li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle dropclass" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -301,6 +319,7 @@
                   <li><a class="dropdown-item" href="#">Disabled</a></li>
                 </ul>
               </li>
+              <li><a href="/static/Events.html">Events</a></li>
         </ul>
     </div>
     <div class="header">
@@ -326,6 +345,9 @@
     </div>
     <div class="message">
         <h2 style="text-align: center;">Message</h2>
+    </div>
+    <div class="events">
+        <h2 style="text-align: center;">Events</h2>
     </div>
     <div class="teachers">
         <div class="headmaster">
