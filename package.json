@@ -1,15 +1,17 @@
 {
-  "name": "astro_and_quantum",
+  "name": "wizartopia_project",
   "version": "1.0.0",
-  "description": "This is the official webpage for AstroPhisics and Quantum Mechanics Club of JU",
-  "main": "Log_In_Form_backend.js",
+  "description": "This is the official webpage of Wizardtopia",
+  "main": "backend.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Farshid Hossain",
+  "author": "Professor Farshid Hossain",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^8.0.1"
+    "mongodb": "^6.2.0",
+    "mongoose": "^8.0.0",
+    "nodemon": "^3.0.1"
   }
 }
