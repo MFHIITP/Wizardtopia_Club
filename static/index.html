@@ -155,7 +155,7 @@
 
     .message{
         border:2px solid green;
-        height:300px;
+        height:350px;
         width:65%;
         margin:12px auto;
         padding:6px;
@@ -345,10 +345,11 @@
             <li><a href="/static/Houses/Rules.html">Rules And Regulations</a></li>
             <li><a href="/static/form.html">Register Your Name</a></li>
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle dropclass" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle dropclass" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
+                id="dp" style="position:relative; top:3px;" >
                 Matirials
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="it">
                   <li><a class="dropdown-item" href="/static/book/books.html">Books</a></li>
                   <li><a class="dropdown-item" href="#">Movies</a></li>
                   <li><a class="dropdown-item" href="#">Disabled</a></li>
@@ -378,10 +379,23 @@
             <p style="font-weight: bold">Slytherin</p>
         </div>
     </div>
-    <div class="message">
+    <div class="message" style="overflow:scroll;">
         <h2 style="text-align: center;">Message</h2>
+        <p>Dear Wizardtopians,
+            <br>
+            Your magic matters! 🌟 We invite you to share your thoughts in our quick survey, shaping the future of Wizardtopia. Your feedback is the spell that keeps our community enchanting.
+            <br>
+            <a href="https://forms.gle/b6RK7GT8jo2Ge7dZA">Survey Link: https://forms.gle/b6RK7GT8jo2Ge7dZA</a>
+            <br>
+            Take a few minutes to let us know your thoughts on past events and suggest magical ideas for the future. Your input is the key to making Wizardtopia even more spellbinding!
+            <br>
+            Enchantingly yours,
+            <br>
+            Anirban Sarkar <br>
+            Headmaster, Wizardtopia <br>
+            Note: Our club was predetermined to have only active members in it. Filling out this form is mandatory for everyone.</p>
     </div>
-    <div class="events" style="overflow:scroll;">
+    <div class="events" style="overflow-y:scroll;">
         <h2 style="text-align: center;">Events</h2>
         <p>Date: 19.11.2023</p>
         <img src="../static/Images/download copy.jpg" alt="" height="170px" width="170px">
@@ -439,11 +453,26 @@
         </div>
     </div>
     <div class="footer">
-        <p>copyright: Wizards_of_jadavpur_united:</p>
-        <p>Hogwarts_School_Of_Witchcraft_And_Wizardy:Official_Extension</p>
-        <p style="color:aqua;">Created by: Md. Farshid Hossain </p>       
-        <p>Approved by: Anirban Sarkar, Headmaster of Wizardtopia</p>
-    </div>
+        Contact Us <br>
+        <img src="../static/images/88a9d0c252977e827f7f3862e8de6714.jpg" alt="" height="20px" width="20px" style="margin-right: 4px">Farshid Hossain: 
+        <a href="tel:8420019028" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;">8420019028</a>
+        <br> &nbsp; &nbsp; &nbsp;
+        Email Us :
+        <a href="mailto:hossainfarshid@gmail.com" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;" >hossainfarshid@gmail.com</a>
+        <br>
+        <img src="../static/images/88a9d0c252977e827f7f3862e8de6714.jpg" alt="" height="20px" width="20px" style="margin-right: 4px">Anirban Sarkar:
+        <a href="tel:8100429194" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;">8100429194</a> 
+        <br>
+        <img src="../static/images/88a9d0c252977e827f7f3862e8de6714.jpg" alt="" height="20px" width="20px" style="margin-right: 4px">Ullash Biswas:
+        <a href="tel:9674839940" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;">9674839940</a> 
+        <br>
+        <img src="../static/images/88a9d0c252977e827f7f3862e8de6714.jpg" alt="" height="20px" width="20px" style="margin-right: 4px">Shinjan Roy:
+        <a href="tel:6289997084" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;">6289997084</a> 
+        <br>
+      </div>
+      <img src="../static/images/88a9d0c252977e827f7f3862e8de6714.jpg" alt="" height="20px" width="20px" style="margin-right: 4px">Shramana Mondal:
+        <a href="tel:8927986112" style="color:aquamarine; margin-left: 2px; text-decoration: none; position:relative;">8927986112</a> 
+        <br>
     <script>
         function hide(){
             let menu = document.getElementById('menu');
@@ -455,6 +484,28 @@
                 menu.style.display = hide;
             }
         }
+        let para = document.getElementById("dp");
+        let p1 = document.getElementById("it");
+        para.addEventListener("mouseover",
+          function run(){
+            p1.style.display = "block";
+          }
+        );
+        p1.addEventListener("mouseover",
+          function run(){
+            p1.style.display = "block";
+          }
+        );
+        p1.addEventListener("mouseout",
+          function run(){
+            p1.style.display = "none";
+          }
+        );
+        para.addEventListener("mouseout",
+          function run(){
+            p1.style.display = "none";
+          }
+        );
         
         
     </script>
